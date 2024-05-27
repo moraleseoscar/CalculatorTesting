@@ -1,6 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { render, fireEvent } from "@testing-library/react";
-import Calculator from "./Calculator";
+import Calculator from "../Calculator";
 
 describe("Calculator", () => {
   // Pruebas para verificar que se inicio correctamente el display
