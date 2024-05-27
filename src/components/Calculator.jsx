@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Calculator.css";
+import Display from "./Display";
+import Button from "./Button";
 
 const Calculator = () => {
   const [displayValue, setDisplayValue] = useState("0");
@@ -91,126 +93,115 @@ const Calculator = () => {
 
   return (
     <div className="calculator bg-light p-3 rounded shadow">
-      <div className="display bg-dark text-white p-2 mb-3 rounded">
-        {displayValue}
-      </div>
+      <Display displayValue={displayValue} />
       <div className="row mb-2 mx-1">
-        <button className="btn btn-danger col-6" onClick={handleClear}>
-          C
-        </button>
-        <button className="btn btn-warning col-6" onClick={handleBackspace}>
-          &lt;-
-        </button>
+        <Button
+          className="btn btn-danger col-6"
+          onClick={handleClear}
+          value="C"
+        />
+        <Button
+          className="btn btn-warning col-6"
+          onClick={handleBackspace}
+          value="<-"
+        />
       </div>
       <div className="buttons">
         <div className="row mx-1 mb-2">
-          <button
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick("7")}
-          >
-            7
-          </button>
-          <button
+            value="7"
+          />
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick("8")}
-          >
-            8
-          </button>
-          <button
+            value="8"
+          />
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick("9")}
-          >
-            9
-          </button>
-          <button
+            value="9"
+          />
+          <Button
             className={`btn ${
               operator === "/" ? "btn-info" : "btn-primary"
             } col-3`}
             onClick={() => handleOperatorClick("/")}
-          >
-            /
-          </button>
+            value="/"
+          />
         </div>
         <div className="row mx-1 mb-2">
-          <button
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick("4")}
-          >
-            4
-          </button>
-          <button
+            value="4"
+          />
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick("5")}
-          >
-            5
-          </button>
-          <button
+            value="5"
+          />
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick("6")}
-          >
-            6
-          </button>
-          <button
+            value="6"
+          />
+          <Button
             className={`btn ${
               operator === "*" ? "btn-info" : "btn-primary"
             } col-3`}
             onClick={() => handleOperatorClick("*")}
-          >
-            *
-          </button>
+            value="*"
+          />
         </div>
         <div className="row mx-1 mb-2">
-          <button
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick("1")}
-          >
-            1
-          </button>
-          <button
+            value="1"
+          />
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick("2")}
-          >
-            2
-          </button>
-          <button
+            value="2"
+          />
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick("3")}
-          >
-            3
-          </button>
-          <button
+            value="3"
+          />
+          <Button
             className={`btn ${
               operator === "-" ? "btn-info" : "btn-primary"
             } col-3`}
             onClick={() => handleOperatorClick("-")}
-          >
-            -
-          </button>
+            value="-"
+          />
         </div>
-        <div className="row mx-1">
-          <button
+        <div className="row mx-1 mb-2">
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick("0")}
-          >
-            0
-          </button>
-          <button
+            value="0"
+          />
+          <Button
             className="btn btn-secondary col-3"
             onClick={() => handleButtonClick(".")}
-          >
-            .
-          </button>
-          <button className="btn btn-success col-3" onClick={handleEqualClick}>
-            =
-          </button>
-          <button
+            value="."
+          />
+          <Button
+            className="btn btn-success col-3"
+            onClick={() => handleEqualClick()}
+            value="="
+          />
+          <Button
             className={`btn ${
               operator === "+" ? "btn-info" : "btn-primary"
             } col-3`}
             onClick={() => handleOperatorClick("+")}
-          >
-            +
-          </button>
+            value="+"
+          />
         </div>
       </div>
     </div>
