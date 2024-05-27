@@ -1,0 +1,16 @@
+.calculator {
+  width: 350px;
+}
+
+.display {
+  height: 60px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.buttons .btn {
+  height: 60px;
+  font-size: 1.5rem;
+}
